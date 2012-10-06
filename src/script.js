@@ -2,6 +2,14 @@
  * V.0.1
  */
 var JSHELPING = {};
+JSHELPING.mods = {};
+
+/** arrays */
+JSHELPING.mods.array = {};
+/** isArray */
+JSHELPING.mods.array.isArray = function(testObj) {
+    return testObj && !(testObj.propertyIsEnumerable('length')) && typeof testObj === 'object' && typeof testObj.length === 'number';
+}
 
 /** functions */
 JSHELPING.mods.functions = {};
@@ -43,6 +51,7 @@ JSHELPING.mods.event.add = function(obj, type, fn) {
 JSHELPING.mods.event.remove = function(obj, type, fn) {
     if (obj.removeEventListener) {
         obj.removeEventListener( type, fn, false );
+		obj[type] = undefined;
     } else if (obj.detachEvent) {
         obj.detachEvent( "on"+type, obj[type+fn] );
         obj[type+fn] = null;
@@ -59,18 +68,21 @@ JSHELPING.mods.event.cancelBubbling = function(evt) {
 /** classes */
 JSHELPING.mods.classes = {};
 /** add a class */
-JSHELPING.mods.classes.addClass = function(ele,cls) {
-    if (!JSHELPING.mods.classes.hasClass(ele,cls)) { 
-	    ele.className += " " + cls;
-	}
+JSHELPING.mods.classes.addClass = function(ele, cls) {
+    if (!JSHELPING.mods.classes.hasClass(ele, cls)) ele.className += " "+cls;
 }
 /** remove a class */ 
 JSHELPING.mods.classes.removeClass = function(ele,cls) {
     if (JSHELPING.mods.classes.hasClass(ele,cls)) {
-        ele.className = ele.className.replace(new RegExp('(\\s|^)'+cls+'(\\s|$)'),' ');
+        ele.className = ele.className.replace(new RegExp('(\\s|^)'+cls+'(\\s|$)'), ' ');
     }
 }
 /** has a class */
-JSHELPING.mods.classes.hasClass = function(ele,cls) {
-	return new RegExp('(\\s|^)' + class + '(\\s|$)').test(obj.className);
+JSHELPING.mods.classes.hasClass = function(el, selector) {
+    var className = " " + selector + " ";
+    var elemClassName = el.getAttribute("class");
+    if ((" " + elemClassName + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
+        return true;
+    }  
+    return false;
 }
