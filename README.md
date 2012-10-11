@@ -1,13 +1,4 @@
 # js-helping
 
-native js script collection
+native js script collection see index.html for basic usage.
 
-current namespace `JSHELPING`
-
-some basic mods
-`JSHELPING.mods.array`
-`JSHELPING.mods.functions`
-`JSHELPING.mods.element`
-`JSHELPING.mods.event`
-`JSHELPING.mods.classes`
-`JSHELPING.mods.data`

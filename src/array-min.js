@@ -1,0 +1,1 @@
+JSHELPING.loadedmodule.array=function(){return{isArray:function(a){return a&&!a.propertyIsEnumerable("length")&&typeof a==="object"&&typeof a.length==="number"}}}
