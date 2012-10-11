@@ -1,44 +1,48 @@
 <html>
     <head>
-	    <meta charset="utf-8">
-		<style>
-		#box { width: 300px; height: 200px; }
-		.lines { border: 3px solid #000; }
-		</style>
-		<script src="src/script-min.js?array,element,event"></script>
-	</head>
-	<body>
-	    <div id="box">BOX</div>
+        <meta charset="utf-8">
+	<style>
+	#box { width: 300px; height: 200px; }
+	.lines { border: 3px solid #000; }
+	</style>
+	<script src="src/script-min.js?array,element,event"></script>
+    </head>
+    <body>
+        <div id="box">BOX</div>
 	    <script>
-		    window.onload = function() {
-			    var jsc = JSHELPING.Core;
-				var modArray = jsc.getModule('array');			
-				console.log( modArray.isArray([1,2,3]) );
-				console.log( modArray.isArray(true) );
+            window.onload = function() {
+                // wrap namespace in variable
+	        var jsc = JSHELPING.Core;
+		
+                var modArray = jsc.getModule('array');			
+		
+                console.log( modArray.isArray([1,2,3]) );
+		console.log( modArray.isArray(true) );
 				
-				var modElement = jsc.getModule('element');	
-				modElement.addClass(document.querySelector('#box'), 'lines');
+		var modElement = jsc.getModule('element');	
+		modElement.addClass(document.querySelector('#box'), 'lines');
 				
-				setTimeout(function() {
-				    modElement.removeClass(document.querySelector('#box'), 'lines');
-				}, 2000);
+		setTimeout(function() {
+		    modElement.removeClass(document.querySelector('#box'), 'lines');
+		}, 2000);
 				
-				setTimeout(function() {
-				    modElement.addClass(document.querySelector('#box'), 'lines');
-				}, 4000);
-				
-				function myModule() {
+		setTimeout(function() {
+		    modElement.addClass(document.querySelector('#box'), 'lines');
+		}, 4000);
+			
+                // create a module	
+		function myModule() {
                     return {
-		                doWork: function() {
-		                    return 'done';
-		                }
-	                }
+		        doWork: function() {
+		            return 'done';
+		        }
+	            }
                 }
-				jsc.register('myModule', myModule);
+		jsc.register('myModule', myModule);
 				
-				var myMod = jsc.getModule('myModule');	
-				console.log(myMod.doWork());
-			}
-		</script>
-	</body>
+		var myMod = jsc.getModule('myModule');	
+		console.log(myMod.doWork());
+	}
+	</script>
+    </body>
 </html>
