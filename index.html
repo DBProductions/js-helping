@@ -5,11 +5,12 @@
 	#box { width: 300px; height: 200px; }
 	.lines { border: 3px solid #000; }
 	</style>
-	<script src="src/script-min.js?array,element,event"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="src/script-min.js?array,element,event,socket"></script>
     </head>
     <body>
         <div id="box">BOX</div>
-	    <script>
+	<script>
             window.onload = function() {
                 // wrap namespace in variable
 	        var jsc = JSHELPING.Core;
@@ -19,7 +20,8 @@
                 console.log( modArray.isArray([1,2,3]) );
 		console.log( modArray.isArray(true) );
 				
-		var modElement = jsc.getModule('element');	
+		var modElement = jsc.getModule('element');
+		modElement.add('box', 'output');
 		modElement.addClass(document.querySelector('#box'), 'lines');
 				
 		setTimeout(function() {
@@ -42,7 +44,23 @@
 				
 		var myMod = jsc.getModule('myModule');	
 		console.log(myMod.doWork());
-	}
+		
+		var modSocket = jsc.getModule('socket');
+		
+                function myHandler(data) {
+		    document.querySelector('#output').innerHTML = data.time;
+		}
+                
+		var handlings = [
+		    {'name':'msg', 'func': function(data){console.log(data.message);}},
+		    {'name':'update', 'func': myHandler}
+		];
+		
+                modSocket.connect('http://localhost:3000', handlings);
+		
+                modSocket.send('echo', {'msg':'test1'});
+		modSocket.send('echo', {'msg':'test2'});
+	    }
 	</script>
     </body>
 </html>
