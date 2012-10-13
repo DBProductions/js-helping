@@ -3,9 +3,19 @@
  */
 var JSHELPING = {};
 JSHELPING.loadedmodule = {};
+JSHELPING.loadedmodule.deps = {
+    'socket': '/socket.io/socket.io.js'
+};
 JSHELPING.Core = {};
 JSHELPING.Core.modules = {};
 
+JSHELPING.Core.addScript = function(src) {
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = src;
+    document.getElementsByTagName('head')[0].appendChild(s);
+    return s;
+};
 JSHELPING.Core.register = function(name, func) {
     this.modules[name] = func;
 };
@@ -13,12 +23,12 @@ JSHELPING.Core.getModule = function(name) {
     return this.modules[name]();
 };
 JSHELPING.Core.loadModule = function(name) {
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'src/' + name + '-min.js';
-    document.getElementsByTagName('head')[0].appendChild(s);
-    s.onload = function() {
-        JSHELPING.Core.register(name, JSHELPING.loadedmodule[name]);
+    if (JSHELPING.loadedmodule.deps[name]) {
+	JSHELPING.Core.addScript(JSHELPING.loadedmodule.deps[name]);	    
+    }
+    var s = JSHELPING.Core.addScript('src/' + name + '-min.js');
+    s.onload = function() {    	
+    	JSHELPING.Core.register(name, JSHELPING.loadedmodule[name]);
     }	
 };
 JSHELPING.Core.init = (function() {
