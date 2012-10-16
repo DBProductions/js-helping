@@ -40,39 +40,36 @@
 	            }
                 }
 		jsc.register('myModule', myModule);
+                var myMod = jsc.getModule('myModule');
+                console.log(myMod.doWork()); 
 		
 		var modObject = jsc.getModule('object');
 		
-function A() {
-    this.name = 'A';
-}
-A.prototype.sayA = function sayA() {
-    return 'sayA ' + this.name;
-}
+                function A() {
+                    this.name = 'A';
+                }
+                A.prototype.sayA = function sayA() {
+                    return 'sayA ' + this.name;
+                }
 
-function B() {
-    //this.name = 'B'; // überschreiben von this.name
-}
+                function B() {
+                    //this.name = 'B'; // overwrite this.name
+                }
+	
+                modObject.extend(B, A);
 
-// bevor prototype für B definiert wird	
-modObject.extend(B, A);
+                B.prototype.sayB = function sayB() {
+                    return 'sayB ' + this.name;
+                }
 
-B.prototype.sayB = function sayB() {
-    return 'sayB ' + this.name;
-}
+                var b = new B();
 
-var b = new B();
-
-console.log( b.name ); // A
-console.log( b.sayA() ); // sayA A
-console.log( b.sayB() ); // sayB A
+                console.log( b.name ); // A
+                console.log( b.sayA() ); // sayA A
+                console.log( b.sayB() ); // sayB A
 		
-var c = modObject.clone(B);		
-console.log( b.sayB() ); // A		
-		
-				
-		var myMod = jsc.getModule('myModule');	
-		console.log(myMod.doWork());
+                var c = modObject.clone(B);		
+                console.log( b.sayB() ); // A				
 		
 		var modSocket = jsc.getModule('socket');
 		

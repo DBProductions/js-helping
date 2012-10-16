@@ -11,20 +11,28 @@ define own modules or combine it with other solutions is easy.
 
 ### object
 `extend(child, parent)`
+
 `clone(obj)`
 
 ### element
 `add(parent, id)`
+
 `remove(id)`
+
 `addClass(el, cls)`
+
 `hasClass(el, selector)`
+
 `removeClass(el, cls)`
 
 ### event
 `add(obj, type, fn)`
+
 `remove(obj, type, fn)`
+
 `cancalBubbling(evt)`
 
 ### socket
 `connect(url, handlings)`
+
 `send(name, data)`
