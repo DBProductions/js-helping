@@ -9,6 +9,10 @@ define own modules or combine it with other solutions is easy.
 ### array
 `isArray(obj)`
 
+`each(array, function)`
+
+`remove(array, item)`
+
 ### object
 `extend(child, parent)`
 

@@ -1,1 +1,1 @@
-JSHELPING.loadedmodule.array=function(){return{isArray:function(a){return a&&!a.propertyIsEnumerable("length")&&typeof a==="object"&&typeof a.length==="number"}}}
+JSHELPING.loadedmodule.array=function(){return{isArray:function(a){return a&&!a.propertyIsEnumerable("length")&&typeof a==="object"&&typeof a.length==="number"},each:function(a,b){for(var c=a.length-1;c>=0;c--){a[c]=b(a[c])}},remove:function(a,b){var c=0;while(c<a.length){if(a[c]==b){a.splice(c,1)}else{c+=1}}return a}}}

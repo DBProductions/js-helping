@@ -16,8 +16,11 @@
 		
                 var modArray = jsc.getModule('array');			
 		
-                console.log( modArray.isArray([1,2,3]) );
+		var myArr = [1,2,3];
+                console.log( modArray.isArray(myArr) );
 		console.log( modArray.isArray(true) );
+		modArray.each(myArr, function add(x){return x+=10;});		        
+		console.log(myArr);         
 				
 		var modElement = jsc.getModule('element');
 		modElement.add('box', 'output');
