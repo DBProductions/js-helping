@@ -3,7 +3,7 @@
 native js script collection see index.html for basic usage, start it with `node server.js`
 
 js-helping works with JSHELPING as namespace, `script-min.js` load and handle modules.
-it's basically very simple with four modules `array, element, event, socket`
+it's basically very simple with some modules `array, object, element, event, socket`
 define own modules or combine it with other solutions is easy.
 
 ### array
