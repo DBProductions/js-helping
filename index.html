@@ -2,15 +2,24 @@
     <head>
         <meta charset="utf-8">
 	<style>
-	#box { width: 300px; height: 200px; }
+	#box { width: 100px; height: 50px; }
 	.lines { border: 3px solid #000; }
 	</style>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<script src="src/script-min.js?array,object,element,event,socket"></script>
+	<script src="src/script-min.js?array,object,element,event,form,socket"></script>
     </head>
     <body>
 	    <div class="container">
-            <div id="box">BOX</div>
+		    <h1>js-helping</h1>            
+			<form id="loginFrm" class="form-horizontal" action="/login" method="post">
+                    <fieldset>
+                        <legend>Loginform</legend>
+                        <div class="control-group"><input type="email" class="span3" id="email" value="" placeholder="email@web.de" pattern="^([0-9a-zA-Z]+([_.-]?[0-9a-zA-Z]+)*@[0-9a-zA-Z]+[0-9,a-z,A-Z,.,-]*(.){1}[a-zA-Z]{2,4})+$"></div>
+                        <div class="control-group"><input type="password" name="password" class="span3" placeholder="password"></div>
+                        <div class="control-group"><button type="submit" class="btn btn-primary">Login</button> <span id="frmMsg"></span></div>
+                    </fieldset>
+            </form> 
+			<div id="box">BOX</div>
 		</div>
 	<script>
             window.onload = function() {
@@ -36,6 +45,15 @@
 		setTimeout(function() {
 		    modElement.addClass(document.querySelector('#box'), 'lines');
 		}, 4000);
+		
+		var modEvent = jsc.getModule('event'); 
+		modEvent.add(document.querySelector('#loginFrm'), 'submit', function(e) {
+		    e.preventDefault();
+			var modForm = jsc.getModule('form');
+			//return sendForm('loginFrm');
+			document.querySelector('#frmMsg').innerHTML = JSON.stringify(modForm.validate('loginFrm'));
+			return false;
+		});
 			
                 // create a module	
 		function myModule() {
