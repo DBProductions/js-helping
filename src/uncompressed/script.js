@@ -1,10 +1,10 @@
 /**
- * V.0.1
+ * V.0.0.1
  */
 var JSHELPING = {};
 JSHELPING.loadedmodule = {};
 JSHELPING.loadedmodule.deps = {
-    'socket': '/socket.io/socket.io.js'
+    'socketio': ['/socket.io/socket.io.js']
 };
 JSHELPING.Core = {};
 JSHELPING.Core.modules = {};
@@ -24,7 +24,9 @@ JSHELPING.Core.getModule = function(name) {
 };
 JSHELPING.Core.loadModule = function(name) {
     if (JSHELPING.loadedmodule.deps[name]) {
-	JSHELPING.Core.addScript(JSHELPING.loadedmodule.deps[name]);	    
+        for(var i = 0; i < JSHELPING.loadedmodule.deps[name].length; i++) {
+	    JSHELPING.Core.addScript(JSHELPING.loadedmodule.deps[name][i]);	    
+	}
     }
     var s = JSHELPING.Core.addScript('src/' + name + '-min.js');
     s.onload = function() {    	
