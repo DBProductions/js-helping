@@ -3,12 +3,12 @@
 native js script collection see index.html for basic usage, start it with `node server.js`
 
 js-helping works with JSHELPING as namespace, `script-min.js` load and handle modules.
-it's basically very simple with some modules `array, object, element, event, form, socket`
+it's basically very simple with some modules `array, object, element, event, form, socketio`
 define own modules or combine it with other solutions is easy.
 
 Load it.
 
-    <script src="src/script-min.js?array,object,element,event,socket"></script>
+    <script src="src/script-min.js?array,object,element,event,socketio"></script>
 
 Use it.
 
@@ -52,7 +52,7 @@ Use it.
 ### form
 `validate(form)`
 
-### socket
+### socketio
 `connect(url, handlings)`
 
 `send(name, data)`

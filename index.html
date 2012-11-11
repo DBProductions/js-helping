@@ -10,18 +10,27 @@
 	<script src="src/script-min.js?array,object,element,event,form,socketio"></script>
     </head>
     <body>
-	    <div class="container">
-		    <h1>js-helping</h1>            
-			<form id="loginFrm" class="form-horizontal" action="/login" method="post">
+        <div class="container">
+	    <h1>js-helping</h1>            
+
+            <div class="row">
+                <div class="span4">
+                    <h2>Heading</h2>
+                    <div id="box">Box</div>
+                </div>
+                <div class="span4">
+                    <h2>Form</h2>
+	            <form id="loginFrm" class="form-horizontal" action="/login" method="post">
                     <fieldset>
-                        <legend>Loginform</legend>
                         <div class="control-group"><input type="email" class="span3" id="email" value="" placeholder="email@web.de" pattern="^([0-9a-zA-Z]+([_.-]?[0-9a-zA-Z]+)*@[0-9a-zA-Z]+[0-9,a-z,A-Z,.,-]*(.){1}[a-zA-Z]{2,4})+$"></div>
                         <div class="control-group"><input type="password" name="password" class="span3" placeholder="password"></div>
                         <div class="control-group"><button type="submit" class="btn btn-primary">Login</button> <span id="frmMsg"></span></div>
                     </fieldset>
-            </form> 
-			<div id="box">BOX</div>
-		</div>
+                    </form> 
+                </div>
+            </div>
+
+	</div>
 	<script>
             window.onload = function() {
                 // wrap namespace in variable
