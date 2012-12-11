@@ -25,13 +25,13 @@ JSHELPING.Core.getModule = function(name) {
 JSHELPING.Core.loadModule = function(name) {
     if (JSHELPING.loadedmodule.deps[name]) {
         for(var i = 0; i < JSHELPING.loadedmodule.deps[name].length; i++) {
-	    JSHELPING.Core.addScript(JSHELPING.loadedmodule.deps[name][i]);	    
-	}
+            JSHELPING.Core.addScript(JSHELPING.loadedmodule.deps[name][i]);
+        }
     }
     var s = JSHELPING.Core.addScript('src/' + name + '-min.js');
-    s.onload = function() {    	
-    	JSHELPING.Core.register(name, JSHELPING.loadedmodule[name]);
-    }	
+    s.onload = function() {
+        JSHELPING.Core.register(name, JSHELPING.loadedmodule[name]);
+    };	
 };
 JSHELPING.Core.init = (function() {
     var scripts = document.getElementsByTagName('script');

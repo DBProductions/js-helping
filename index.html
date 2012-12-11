@@ -6,6 +6,19 @@
 	#box { width: 90px; height: 45px; }
 	.lines { border: 2px solid #000; }
 	.error { border: 1px solid red !important; }
+        div.colorbox {
+            border: 1px solid #777777;
+            height: 100px;
+            width: 100px;
+            /*background-color: #ffffff;*/
+            transition: background-color 1s linear;
+            -moz-transition: background-color 1s linear;
+            -o-transition: background-color 1s linear;
+            -webkit-transition: background-color 1s linear;
+        }
+        div.colorbox:hover, div.colored {
+            background-color: #ff0000;
+        }  
 	</style>	
 	<script src="src/script-min.js?array,object,element,event,form,socketio"></script>
     </head>
@@ -15,8 +28,9 @@
 
             <div class="row">
                 <div class="span4">
-                    <h2>Heading</h2>
-                    <div id="box">Box</div>
+                    <h2>Socket Data</h2>
+                    <div id="clock"></div> 
+                    <div id="box"></div>
                 </div>
                 <div class="span4">
                     <h2>Form</h2>
@@ -24,9 +38,16 @@
                     <fieldset>
                         <div class="control-group"><input type="email" class="span3" id="email" value="" placeholder="email@web.de" pattern="^([0-9a-zA-Z]+([_.-]?[0-9a-zA-Z]+)*@[0-9a-zA-Z]+[0-9,a-z,A-Z,.,-]*(.){1}[a-zA-Z]{2,4})+$"></div>
                         <div class="control-group"><input type="password" name="password" class="span3" placeholder="password"></div>
-                        <div class="control-group"><button type="submit" class="btn btn-primary">Login</button> <span id="frmMsg"></span></div>
+                        <div class="control-group"><button type="submit" class="btn btn-primary">Login</button></div>
+                        <div><span id="frmMsg"></span></div>
                     </fieldset>
                     </form> 
+                </div>
+                <div class="span4">
+                    <h2>Mouseover</h2>
+                    <div class="colorbox" id="box1"></div>
+                    <br> 
+                    <div class="colorbox" id="box2"></div>
                 </div>
             </div>
 
@@ -46,14 +67,13 @@
 				
 		var modElement = jsc.getModule('element');
 		modElement.add('box', 'output');
-		modElement.addClass(document.querySelector('#box'), 'lines');
 				
 		setTimeout(function() {
-		    modElement.removeClass(document.querySelector('#box'), 'lines');
+		    modElement.addClass(document.querySelector('#box2'), 'collored');
 		}, 2000);
 				
 		setTimeout(function() {
-		    modElement.addClass(document.querySelector('#box'), 'lines');
+                    modElement.removeClass(document.querySelector('#box2'), 'colored');
 		}, 4000);
 		
 		// handle form
@@ -126,21 +146,21 @@
                 console.log( b.sayB() ); // A				
 		
 		var modSocket = jsc.getModule('socketio');
-		
+                var msgCount = 0; 		
                 function myHandler(data) {
-		    document.querySelector('#output').innerHTML = data.time;
-		    //modSocket.send('echo', {'msg':'update'});
+                    msgCount += 1;
+		    document.querySelector('#output').innerHTML = data.message.content+' '+msgCount;
 		}
                 
 		var handlings = [
-		    {'name':'msg', 'func': function(data){console.log(data.message);}},
-		    {'name':'update', 'func': myHandler}
+		    {'name':'msg', 'func': myHandler},
+		    {'name':'update', 'func': function(data){document.querySelector('#clock').innerHTML=data.time;}}
 		];
 		
                 modSocket.connect('http://localhost:3000', handlings);
 		
-                modSocket.send('echo', {'msg':'test1'});
-		modSocket.send('echo', {'msg':'test2'});
+                modSocket.send('echo', {'content':'test1'});
+		modSocket.send('echo', {'content':'test2'});
 	    }
 	</script>
     </body>
