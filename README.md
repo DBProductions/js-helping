@@ -6,11 +6,11 @@ js-helping works with JSHELPING as namespace, `script-min.js` load and handle mo
 it's basically very simple with some modules `array, object, element, event, form, socketio`
 define own modules or combine it with other solutions is easy.
 
-Load it.
+## Load it.
 
     <script src="src/script-min.js?array,object,element,event,socketio"></script>
 
-Use it.
+## Use it.
 
     var jsc = JSHELPING.Core;
     var modArray = jsc.getModule('array');
@@ -56,3 +56,6 @@ Use it.
 `connect(url, handlings)`
 
 `send(name, data)`
+
+# Grunt.js
+Using grunt to run JSHint, QUnit and UglifyJS. `grunt`

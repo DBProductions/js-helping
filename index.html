@@ -20,12 +20,11 @@
             background-color: #ff0000;
         }  
 	</style>	
-	<script src="src/script-min.js?array,object,element,event,form,socketio"></script>
+	<script src="src/build.js"></script>
     </head>
     <body>
         <div class="container">
 	    <h1>js-helping</h1>            
-
             <div class="row">
                 <div class="span4">
                     <h2>Socket Data</h2>
@@ -50,35 +49,34 @@
                     <div class="colorbox" id="box2"></div>
                 </div>
             </div>
-
-	</div>
-	<script>
+	    </div>
+	    <script>
             window.onload = function() {
                 // wrap namespace in variable
-	        var jsc = JSHELPING.Core;
+	            var jsc = JSHELPING;
 		
-                var modArray = jsc.getModule('array');			
-		
-		var myArr = [1,2,3];
+                var modArray = jsc._array();			
+	  	
+	  	        var myArr = [1,2,3];
                 console.log( modArray.isArray(myArr) );
-		console.log( modArray.isArray(true) );
-		modArray.each(myArr, function add(x){return x+=10;});		        
-		console.log(myArr);         
+		        console.log( modArray.isArray(true) );
+		        modArray.each(myArr, function add(x){return x+=10;});		        
+		        console.log(myArr);         
 				
-		var modElement = jsc.getModule('element');
-		modElement.add('box', 'output');
+		        var modElement = jsc._element();
+		        modElement.add('box', 'output');
 				
-		setTimeout(function() {
-		    modElement.addClass(document.querySelector('#box2'), 'collored');
-		}, 2000);
+		        setTimeout(function() {
+		            modElement.addClass(document.querySelector('#box2'), 'collored');
+		        }, 2000);
 				
-		setTimeout(function() {
+		        setTimeout(function() {
                     modElement.removeClass(document.querySelector('#box2'), 'colored');
-		}, 4000);
+		        }, 4000);
 		
 		// handle form
-		var modForm = jsc.getModule('form');
-		var modEvent = jsc.getModule('event'); 
+		var modForm = jsc._form();
+		var modEvent = jsc._event(); 
 		var frm = document.querySelector('#loginFrm'),
 		    frmLength = frm.length;
 		modEvent.add(frm, 'submit', function(e) {
@@ -104,20 +102,9 @@
 			}
 			return false;
 		});
-			
-                // create a module	
-		function myModule() {
-                    return {
-		        doWork: function() {
-		            return 'done';
-		        }
-	            }
-                }
-		jsc.register('myModule', myModule);
-                var myMod = jsc.getModule('myModule');
-                console.log(myMod.doWork()); 
+			 
 		
-		var modObject = jsc.getModule('object');
+		var modObject = jsc._object();
 		
                 function A() {
                     this.name = 'A';
@@ -145,7 +132,7 @@
                 var c = modObject.clone(B);		
                 console.log( b.sayB() ); // A				
 		
-		var modSocket = jsc.getModule('socketio');
+		var modSocket = jsc._socketio();
                 var msgCount = 0; 		
                 function myHandler(data) {
                     msgCount += 1;

@@ -1,4 +1,4 @@
-JSHELPING.loadedmodule.socketio = function() {
+JSHELPING._socketio = function() {
     return {
         socket: null,
         connect: function(url, handlings) {

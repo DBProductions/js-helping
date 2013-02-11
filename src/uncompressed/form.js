@@ -1,4 +1,4 @@
-JSHELPING.loadedmodule.form = function() {
+JSHELPING._form = function() {
     return {
         validate: function(ele) {
             var frm = document.getElementById(ele) || document.getElementsByName(ele)[0];

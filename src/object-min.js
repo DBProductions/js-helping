@@ -1,1 +1,0 @@
-JSHELPING.loadedmodule.object=function(){return{extend:function(a,b){a.prototype=b.prototype;a.prototype=new b},clone:function(a){var b={};for(var c in a){if(a.hasOwnProperty(c)){b[c]=a[c]}}return b}}}

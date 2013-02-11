@@ -1,4 +1,4 @@
-JSHELPING.loadedmodule.event = function() {
+JSHELPING._event = function() {
     return {
         add: function(obj, type, fn) {
             if  (obj.addEventListener) {

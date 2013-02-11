@@ -1,4 +1,4 @@
-JSHELPING.loadedmodule.object = function() {
+JSHELPING._object = function() {
     return {
         extend: function(c, p) {
             c.prototype = p.prototype;

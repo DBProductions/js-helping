@@ -1,4 +1,4 @@
-JSHELPING.loadedmodule.element = function() {
+JSHELPING._element = function() {
     return {
         add: function(parent, id) {
             var newdiv = document.createElement('div');
@@ -15,7 +15,7 @@ JSHELPING.loadedmodule.element = function() {
         },
         hasClass: function(ele, selector) {
             var className = " " + selector + " ";
-            var elemClassName = el.getAttribute("class");
+            var elemClassName = ele.getAttribute("class");
             if ((" " + elemClassName + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
                 return true;
             }  
