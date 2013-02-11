@@ -2,22 +2,16 @@
 
 native js script collection see index.html for basic usage, start it with `node server.js`
 
-js-helping works with JSHELPING as namespace, `script-min.js` load and handle modules.
-it's basically very simple with some modules `array, object, element, event, form, socketio`
-define own modules or combine it with other solutions is easy.
+js-helping works with JSHELPING as namespace, it's basically very simple with some modules `array, object, element, event, form, socketio`.
 
 ## Load it.
 
-    <script src="src/script-min.js?array,object,element,event,socketio"></script>
+    <script src="src/build.js"></script>
 
 ## Use it.
 
-    var jsc = JSHELPING.Core;
-    var modArray = jsc.getModule('array');
-    
-    function myModule() { return { ... } }
-    jsc.register('myModule', myModule);
-    var myMod = jsc.getModule('myModule');
+    var jsc = JSHELPING;
+    var modArray = jsc._array();
 
 ### array
 `isArray(obj)`
