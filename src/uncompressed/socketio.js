@@ -1,4 +1,8 @@
+if(!JSHELPING) {
+    var JSHELPING = {};
+}
 JSHELPING._socketio = function() {
+    'use strict';
     return {
         socket: null,
         connect: function(url, handlings) {

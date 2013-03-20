@@ -1,4 +1,8 @@
+if(!JSHELPING) {
+    var JSHELPING = {};
+}
 JSHELPING._form = function() {
+    'use strict';
     return {
         validate: function(ele) {
             var frm = document.getElementById(ele) || document.getElementsByName(ele)[0];

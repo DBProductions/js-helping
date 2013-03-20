@@ -1,17 +1,30 @@
 # js-helping
 
-native js script collection see index.html for basic usage, start it with `node server.js`
+native js script collection to create NodeJS prototypes.
 
-js-helping works with JSHELPING as namespace, it's basically very simple with some modules `array, object, element, event, form, socketio`.
+js-helping works with JSHELPING as namespace, it's basically very simple. 
+Comes with some modules `array, object, element, event, form, socketio, sockjs`.
 
 ## Load it.
 
-    <script src="src/build.js"></script>
+    <script src="js-helping.js"></script>
 
 ## Use it.
 
-    var jsc = JSHELPING;
-    var modArray = jsc._array();
+    var jsh = JSHELPING;
+    var modArray = jsh._array();
+
+# Examples
+
+Simple examples to show how to work with js-helping.
+
+ - chat - simple chat with express and socket.io
+
+# Build it
+
+Using grunt to run JSHint, QUnit and UglifyJS. `grunt`
+
+# Modules
 
 ### array
 `isArray(obj)`
@@ -21,6 +34,8 @@ js-helping works with JSHELPING as namespace, it's basically very simple with so
 `remove(array, item)`
 
 ### object
+`setProperty(obj, key, value)`
+
 `extend(child, parent)`
 
 `clone(obj)`
@@ -30,18 +45,22 @@ js-helping works with JSHELPING as namespace, it's basically very simple with so
 
 `remove(id)`
 
+`query(ele)`
+
+`queryAll(ele)`
+
 `addClass(el, cls)`
 
 `hasClass(el, selector)`
 
 `removeClass(el, cls)`
 
+`getPos(ele)`
+
 ### event
 `add(obj, type, fn)`
 
 `remove(obj, type, fn)`
-
-`cancalBubbling(evt)`
 
 ### form
 `validate(form)`
@@ -51,5 +70,4 @@ js-helping works with JSHELPING as namespace, it's basically very simple with so
 
 `send(name, data)`
 
-# Grunt.js
-Using grunt to run JSHint, QUnit and UglifyJS. `grunt`
+### sockjs

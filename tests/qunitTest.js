@@ -1,13 +1,9 @@
 window.onload = function() {
     
-    test("isArray", function() {
-        equal( true, true, "test runs" );
-    });
-
-    /*var jsc = JSHELPING;
+    var jsc = JSHELPING;
 
     module("JSHELPING array module");
-    var modArray = jsc.array;
+    var modArray = jsc._array();
     test("isArray", function() {
         expect(3);
         var testArr = [1,2,3], 
@@ -33,10 +29,10 @@ window.onload = function() {
     });
 
     module("JSHELPING element module");
-    var modElement = jsc.element;
+    var modElement = jsc._element();    
     test("add and remove testing", function() {
         expect(2);
-        modElement.add('qunit', 'newTestEle');
+        modElement.add('#qunit', 'newTestEle');
         var ele = document.querySelector('#newTestEle');
         equal( "object", typeof(ele), "add element" );
         modElement.remove('newTestEle');
@@ -60,14 +56,34 @@ window.onload = function() {
         equal( false, modElement.hasClass(ele, 'test2'), "remove class test2" );
     });
 
-    module("JSHELPING socketio module");
-    var modSocketio = jsc.socketio;
-    test("socketio connection", function() {
-        var handlings = [{'name':'test', 'func': function(data){console.log(data.message);}}];
-        try {
-            modSocketio.connect('http://localhost:3000', handlings);
-            equal(true, true, 'xxx');
-        } catch(e) {}
-        equal(true, true, 'xxx');    
-    });*/
+    module("JSHELPING object module");
+    var o = {};
+    var modObject = jsc._object();
+    test("set property to object", function() {
+        expect(3);
+        modObject.setProperty(o, 'a', 'A');
+        modObject.setProperty(o, 'b', 'B');
+        modObject.setProperty(o, 'c', 'C');
+        equal('A', o.a, "object has get property 'a'");
+        equal('B', o.b, "object has get property 'b'");
+        equal('C', o.c, "object has get property 'c'");
+    });
+    test("extend an object", function() {
+        var P = function() {
+            this.name = 'value';
+        };
+        var C = function() {};
+        modObject.extend(C, P);
+        var p = new P();
+        var c = new C();
+        equal('value', c.name, "extended object has the property 'name'");
+    });
+    test("clone an object", function() {
+        var P = function() {
+            this.name = 'value';
+        };
+        var p = new P();
+        var c = modObject.clone(p);
+        equal('value', c.name, "cloned object has the property 'name'");
+    });
 };

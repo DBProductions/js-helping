@@ -1,21 +1,32 @@
+'use strict';
 module.exports = function(grunt) {
     grunt.initConfig({
         lint: {
-            all: ['grunt.js', 'src/uncompressed/**/*.js', 'tests/**/*.js']
+            all: ['grunt.js', 'src/uncompressed/**/*.js']
         },
         jshint: {
             options: {
-                browser: true
+                curly: true,
+                eqeqeq: true,
+                eqnull: true,
+                browser: true,
+                node: true,
+                immed: false,
+                latedef: true,
+                newcap: true,
+                noarg: true,
+                sub: true,
+                undef: true,
+                boss: true              
+            },
+            globals: {
+                jQuery: true,
+                io: true,
+                SockJS: true,
+                JSHELPING: true
             }
         },
-        qunit: {
-            all: ['tests.html']
-        },
         min: {
-            mininit: {
-                src: ['src/uncompressed/init.js'],
-                dest: 'src/init.min.js'  
-            },
             minarray: {
                 src: ['src/uncompressed/array.js'],
                 dest: 'src/array.min.js'
@@ -39,15 +50,24 @@ module.exports = function(grunt) {
             minsocketio: {
                 src: ['src/uncompressed/socketio.js'],
                 dest: 'src/socketio.min.js'
+            },
+            minsockjs: {
+                src: ['src/uncompressed/sockjs.js'],
+                dest: 'src/sockjs.min.js'
             }
+        },
+        uglify: {
+            mangle: {toplevel: false}, //prevent changes to variable and function names
+            squeeze: {dead_code: false},
+            codegen: {quote_keys: true}
         },
         concat: {
             deploy: {
-                src: ['src/init.min.js','src/array.min.js','src/element.min.js','src/event.min.js','src/form.min.js','src/object.min.js','src/socketio.min.js'],
-                dest: 'src/build.js'
+                src: ['src/array.min.js','src/element.min.js','src/event.min.js','src/form.min.js','src/object.min.js','src/socketio.min.js','src/sockjs.min.js'],
+                dest: 'js-helping.js'
             }
         }
     });
     
-    grunt.registerTask('default', 'lint qunit min concat');
+    grunt.registerTask('default', 'lint min concat');
 };

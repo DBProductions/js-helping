@@ -1,8 +1,15 @@
+if(!JSHELPING) {
+    var JSHELPING = {};
+}
 JSHELPING._object = function() {
+    'use strict';
     return {
-        extend: function(c, p) {
-            c.prototype = p.prototype;
-            c.prototype = new p();            
+        setProperty: function(obj, key, value) {
+            Object.defineProperty(obj, key, {value: value, writable: true, enumerable: true, configurable: true});
+        },
+        extend: function(C, P) {
+            C.prototype = P.prototype;
+            C.prototype = new P();            
         },
         clone: function(obj) {
             var target = {};
