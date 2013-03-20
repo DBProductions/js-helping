@@ -14,12 +14,6 @@ Comes with some modules `array, object, element, event, form, socketio, sockjs`.
     var jsh = JSHELPING;
     var modArray = jsh._array();
 
-# Examples
-
-Simple examples to show how to work with js-helping.
-
- - chat - simple chat with express and socket.io
-
 # Build it
 
 Using grunt to run JSHint, QUnit and UglifyJS. `grunt`
