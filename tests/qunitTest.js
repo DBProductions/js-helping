@@ -69,14 +69,24 @@ window.onload = function() {
         equal('C', o.c, "object has get property 'c'");
     });
     test("extend an object", function() {
+        expect(4);
         var P = function() {
             this.name = 'value';
+            this.getName = function() {
+                return this.name;
+            }
         };
         var C = function() {};
         modObject.extend(C, P);
+        var D = function() {};
+        modObject.extend(D, C);
         var p = new P();
         var c = new C();
+        var d = new D();
         equal('value', c.name, "extended object has the property 'name'");
+        equal('value', c.getName(), "extended object has the method 'getName'");
+        equal('value', d.name, "second extended object has the property 'name'");
+        equal('value', d.getName(), "second extended object has the method 'getName'");
     });
     test("clone an object", function() {
         var P = function() {

@@ -7,7 +7,7 @@ Comes with some modules `array, object, element, event, form, socketio, sockjs`.
 
 ## Load it.
 
-    <script src="js-helping.js"></script>
+    <script type="application/javascript;version=1.8" src="js-helping.js"></script>
 
 ## Use it.
 
@@ -16,7 +16,7 @@ Comes with some modules `array, object, element, event, form, socketio, sockjs`.
 
 # Build it
 
-Using grunt to run JSHint, QUnit and UglifyJS. `grunt`
+Using grunt to run JSHint and UglifyJS. `grunt`
 
 # Modules
 
@@ -65,3 +65,6 @@ Using grunt to run JSHint, QUnit and UglifyJS. `grunt`
 `send(name, data)`
 
 ### sockjs
+`connect(url, callback)`
+
+`send(name, data)`
