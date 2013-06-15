@@ -16,7 +16,8 @@ Comes with some modules `array, object, element, event, form, socketio, sockjs`.
 
 # Build it
 
-Using grunt to run JSHint and UglifyJS. `grunt`
+Using grunt to run JSHint and UglifyJS.  
+`grunt`
 
 # Modules
 
