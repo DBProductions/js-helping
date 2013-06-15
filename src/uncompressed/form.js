@@ -1,7 +1,7 @@
 if(!JSHELPING) {
     var JSHELPING = {};
 }
-JSHELPING._form = function() {
+JSHELPING._form = function _form() {
     'use strict';
     return {
         validate: function(ele) {

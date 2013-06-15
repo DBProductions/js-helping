@@ -1,31 +1,31 @@
 if(!JSHELPING) {
     var JSHELPING = {};
 }
-JSHELPING._element = function() {
+JSHELPING._element = function _element() {
     'use strict';
     return {
-        add: function(parent, id) {
+        add: function add(parent, id) {
             var newdiv = document.createElement('div');
             newdiv.setAttribute('id', id);
             document.querySelector(parent).appendChild(newdiv);
         },
-        remove: function(id) {
+        remove: function remove(id) {
             var ele = document.getElementById(id);
             var parent = ele.parentNode;
             parent.removeChild(ele);
         },
-        query: function(ele) {
+        query: function query(ele) {
             return document.querySelector(ele);   
         },
-        queryAll: function(ele) {
+        queryAll: function queryAll(ele) {
             return document.querySelectorAll(ele);   
         },
-        addClass: function(ele, cls) {
+        addClass: function addClass(ele, cls) {
             if (!this.hasClass(ele, cls)) {
                 ele.className += " " + cls;
             }
         },
-        hasClass: function(ele, selector) {
+        hasClass: function hasClass(ele, selector) {
             var className = " " + selector + " ";
             var elemClassName = ele.getAttribute("class");
             if ((" " + elemClassName + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
@@ -33,12 +33,12 @@ JSHELPING._element = function() {
             }  
             return false;
         },
-        removeClass: function(ele, cls) {
+        removeClass: function removeClass(ele, cls) {
             if (this.hasClass(ele,cls)) {
                 ele.className = ele.className.replace(new RegExp('(\\s|^)'+cls+'(\\s|$)'), ' ');
             }
         },
-        getPos: function(ele) {
+        getPos: function getPos(ele) {
             var curleft = 0;
             var curtop = 0;
             if (ele.offsetParent) {

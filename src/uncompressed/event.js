@@ -1,10 +1,10 @@
 if(!JSHELPING) {
     var JSHELPING = {};
 }
-JSHELPING._event = function() {
+JSHELPING._event = function _event() {
     'use strict';
     return {
-        add: function(obj, type, fn) {
+        add: function add(obj, type, fn) {
             if  (obj.addEventListener) {
                 obj.addEventListener(type, fn, false);
             } else if (obj.attachEvent) {
@@ -15,7 +15,7 @@ JSHELPING._event = function() {
                 obj.attachEvent( "on"+type, obj[type+fn] );
             }
         },
-        remove: function(obj, type, fn) {
+        remove: function remove(obj, type, fn) {
             if (obj.removeEventListener) {
                 obj.removeEventListener(type, fn, false);
                 obj[type] = undefined;

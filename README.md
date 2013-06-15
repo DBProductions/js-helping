@@ -23,6 +23,8 @@ Using grunt to run JSHint and UglifyJS. `grunt`
 ### array
 `isArray(obj)`
 
+`equalArray(array1, array2)`
+
 `each(array, function)`
 
 `remove(array, item)`
