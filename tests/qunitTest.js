@@ -14,11 +14,16 @@ window.onload = function() {
         equal(false, modArray.isArray(testStr), "returns false it's a string");			
     });
     test("equalArray", function() {
+        expect(4);
         var testArr1 = [1,2,3];
         var testArr2 = [1,2,3];
         equal(true, modArray.equalArray(testArr1, testArr2), "returns true arrays are equal");
         testArr2.shift();
         equal(false, modArray.equalArray(testArr1, testArr2), "returns false arrays are not equal");
+        testArr2 = [3,2,1];
+        equal(false, modArray.equalArray(testArr1, testArr2), "returns false arrays are not equal");
+        testArr2.reverse();
+        equal(true, modArray.equalArray(testArr1, testArr2), "returns true arrays are equal");
     });
     test("each and remove", function() {
         expect(6);

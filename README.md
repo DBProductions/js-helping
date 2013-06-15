@@ -2,8 +2,8 @@
 
 native js script collection to create NodeJS prototypes.
 
-js-helping works with JSHELPING as namespace, it's basically very simple. 
-Comes with some modules `array, object, element, event, form, socketio, sockjs`.
+js-helping works with JSHELPING as namespace, it's basically very simple.  
+Comes with some modules `array, object, element, event, form, socketio, sockjs`
 
 ## Load it.
 
