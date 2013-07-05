@@ -1,9 +1,20 @@
 if(!JSHELPING) {
     var JSHELPING = {};
 }
+/**
+ * This is the description for the form class.
+ *
+ * @class form
+ */
 JSHELPING._form = function _form() {
     'use strict';
     return {
+        /**
+         * Validate the element with placeholder, pattern or is the value empty.
+         *
+         * @method validate
+         * @param {String} ele
+         */
         validate: function(ele) {
             var frm = document.getElementById(ele) || document.getElementsByName(ele)[0];
             var resObj = {};

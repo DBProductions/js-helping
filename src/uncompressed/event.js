@@ -1,9 +1,22 @@
 if(!JSHELPING) {
     var JSHELPING = {};
 }
+/**
+ * This is the description for the event class.
+ *
+ * @class event
+ */
 JSHELPING._event = function _event() {
     'use strict';
     return {
+        /**
+         * Adds a event from type with handler function to the element.
+         *
+         * @method add
+         * @param {Element} obj
+         * @param {String} type
+         * @param {Function} fn
+         */
         add: function add(obj, type, fn) {
             if  (obj.addEventListener) {
                 obj.addEventListener(type, fn, false);
@@ -15,6 +28,14 @@ JSHELPING._event = function _event() {
                 obj.attachEvent( "on"+type, obj[type+fn] );
             }
         },
+        /**
+         * Remove event and handler function from element.
+         *
+         * @method remove
+         * @param {Element} obj
+         * @param {String} type
+         * @param {Function} fn
+         */
         remove: function remove(obj, type, fn) {
             if (obj.removeEventListener) {
                 obj.removeEventListener(type, fn, false);

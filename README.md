@@ -19,55 +19,6 @@ Comes with some modules `array, object, element, event, form, socketio, sockjs`
 Using grunt to run JSHint and UglifyJS.  
 `grunt`
 
-# Modules
+# Documentation
 
-### array
-`isArray(obj)`
-
-`equalArray(array1, array2)`
-
-`each(array, function)`
-
-`remove(array, item)`
-
-### object
-`setProperty(obj, key, value)`
-
-`extend(child, parent)`
-
-`clone(obj)`
-
-### element
-`add(parent, id)`
-
-`remove(id)`
-
-`query(ele)`
-
-`queryAll(ele)`
-
-`addClass(el, cls)`
-
-`hasClass(el, selector)`
-
-`removeClass(el, cls)`
-
-`getPos(ele)`
-
-### event
-`add(obj, type, fn)`
-
-`remove(obj, type, fn)`
-
-### form
-`validate(form)`
-
-### socketio
-`connect(url, handlings)`
-
-`send(name, data)`
-
-### sockjs
-`connect(url, callback)`
-
-`send(name, data)`
+YUIDocs `/docs`

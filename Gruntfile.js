@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
     'use strict';
     grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
         jshint: {
             allFiles: ['grunt.js', 'src/uncompressed/**/*.js'],
             options: {
@@ -71,6 +72,17 @@ module.exports = function(grunt) {
                 src: ['src/array.min.js','src/element.min.js','src/event.min.js','src/form.min.js','src/object.min.js','src/socketio.min.js','src/sockjs.min.js'],
                 dest: 'js-helping.js'
             }
+        },
+        yuidoc: {
+            compile: {
+                name: '<%= pkg.name %>',
+                description: '<%= pkg.description %>',
+                version: '<%= pkg.version %>',
+                options: { 
+                    paths: '<%= pkg.srcDir %>',
+                    outdir: '<%= pkg.docsDir %>'
+                }
+            }
         }
     });
     
@@ -78,7 +90,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-yuidoc');
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'uglify', 'concat']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'concat', 'yuidoc']);
 };

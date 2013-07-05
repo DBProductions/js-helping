@@ -1,0 +1,608 @@
+{
+    "project": {
+        "name": "js-helping",
+        "description": "JS script collection",
+        "version": "0.1.0"
+    },
+    "files": {
+        "src/uncompressed/array.js": {
+            "name": "src/uncompressed/array.js",
+            "modules": {},
+            "classes": {
+                "array": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/uncompressed/element.js": {
+            "name": "src/uncompressed/element.js",
+            "modules": {},
+            "classes": {
+                "element": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/uncompressed/event.js": {
+            "name": "src/uncompressed/event.js",
+            "modules": {},
+            "classes": {
+                "event": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/uncompressed/form.js": {
+            "name": "src/uncompressed/form.js",
+            "modules": {},
+            "classes": {
+                "form": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/uncompressed/object.js": {
+            "name": "src/uncompressed/object.js",
+            "modules": {},
+            "classes": {
+                "object": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/uncompressed/script.js": {
+            "name": "src/uncompressed/script.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/uncompressed/socketio.js": {
+            "name": "src/uncompressed/socketio.js",
+            "modules": {},
+            "classes": {
+                "socketio": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/uncompressed/sockjs.js": {
+            "name": "src/uncompressed/sockjs.js",
+            "modules": {},
+            "classes": {
+                "sockjs": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        }
+    },
+    "modules": {},
+    "classes": {
+        "array": {
+            "name": "array",
+            "shortname": "array",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/uncompressed/array.js",
+            "line": 4,
+            "description": "This is the description for the array class.  \nIt offers some basic methods to help working with arrays."
+        },
+        "element": {
+            "name": "element",
+            "shortname": "element",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/uncompressed/element.js",
+            "line": 4,
+            "description": "This is the description for the element class.  \nIt offers some basic methods to help working with DOM element."
+        },
+        "event": {
+            "name": "event",
+            "shortname": "event",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/uncompressed/event.js",
+            "line": 4,
+            "description": "This is the description for the event class."
+        },
+        "form": {
+            "name": "form",
+            "shortname": "form",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/uncompressed/form.js",
+            "line": 4,
+            "description": "This is the description for the form class."
+        },
+        "object": {
+            "name": "object",
+            "shortname": "object",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/uncompressed/object.js",
+            "line": 4,
+            "description": "This is the description for the object class."
+        },
+        "socketio": {
+            "name": "socketio",
+            "shortname": "socketio",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/uncompressed/socketio.js",
+            "line": 4,
+            "description": "This is the description for the socketio class."
+        },
+        "sockjs": {
+            "name": "sockjs",
+            "shortname": "sockjs",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/uncompressed/sockjs.js",
+            "line": 4,
+            "description": "This is the description for the sockjs class."
+        }
+    },
+    "classitems": [
+        {
+            "file": "src/uncompressed/array.js",
+            "line": 13,
+            "description": "check if given parameter is an array",
+            "itemtype": "method",
+            "name": "isArray",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "array"
+        },
+        {
+            "file": "src/uncompressed/array.js",
+            "line": 23,
+            "description": "check if the two given arrays are equal",
+            "itemtype": "method",
+            "name": "equalArray",
+            "params": [
+                {
+                    "name": "array1",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "array2",
+                "type": "Array"
+            },
+            "class": "array"
+        },
+        {
+            "file": "src/uncompressed/array.js",
+            "line": 40,
+            "description": "call the given function on every element in the array",
+            "itemtype": "method",
+            "name": "each",
+            "params": [
+                {
+                    "name": "arr",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "func",
+                "type": "Function"
+            },
+            "class": "array"
+        },
+        {
+            "file": "src/uncompressed/array.js",
+            "line": 53,
+            "description": "removes the item from the array",
+            "itemtype": "method",
+            "name": "remove",
+            "params": [
+                {
+                    "name": "arr",
+                    "description": "",
+                    "type": "Array"
+                }
+            ],
+            "return": {
+                "description": "item",
+                "type": "Object"
+            },
+            "class": "array"
+        },
+        {
+            "file": "src/uncompressed/element.js",
+            "line": 13,
+            "description": "Create a DOM element and append it to the parent element.",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "parent",
+                    "description": "",
+                    "type": "Element"
+                },
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "element"
+        },
+        {
+            "file": "src/uncompressed/element.js",
+            "line": 25,
+            "description": "Remove a DOM element selected with id from the parent element.",
+            "itemtype": "method",
+            "name": "remove",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "element"
+        },
+        {
+            "file": "src/uncompressed/element.js",
+            "line": 36,
+            "description": "Is only a wrapper method for 'document.querySelector'.",
+            "itemtype": "method",
+            "name": "query",
+            "params": [
+                {
+                    "name": "ele",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "element"
+        },
+        {
+            "file": "src/uncompressed/element.js",
+            "line": 45,
+            "description": "Is only a wrapper method for 'document.querySelectorAll'.",
+            "itemtype": "method",
+            "name": "queryAll",
+            "params": [
+                {
+                    "name": "ele",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "element"
+        },
+        {
+            "file": "src/uncompressed/element.js",
+            "line": 54,
+            "description": "Adds a class to the element className.",
+            "itemtype": "method",
+            "name": "addClass",
+            "params": [
+                {
+                    "name": "ele",
+                    "description": "",
+                    "type": "Element"
+                },
+                {
+                    "name": "cls",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "element"
+        },
+        {
+            "file": "src/uncompressed/element.js",
+            "line": 66,
+            "description": "Check if the element has the class name as attribute defined.",
+            "itemtype": "method",
+            "name": "hasClass",
+            "params": [
+                {
+                    "name": "ele",
+                    "description": "",
+                    "type": "Element"
+                },
+                {
+                    "name": "selector",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "",
+                "type": "Boolean"
+            },
+            "class": "element"
+        },
+        {
+            "file": "src/uncompressed/element.js",
+            "line": 82,
+            "description": "Remove the class from the element.",
+            "itemtype": "method",
+            "name": "removeClass",
+            "params": [
+                {
+                    "name": "ele",
+                    "description": "",
+                    "type": "Element"
+                },
+                {
+                    "name": "cls",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "element"
+        },
+        {
+            "file": "src/uncompressed/element.js",
+            "line": 94,
+            "description": "Returns the coordinates of the element.",
+            "itemtype": "method",
+            "name": "getPos",
+            "params": [
+                {
+                    "name": "ele",
+                    "description": "",
+                    "type": "Element"
+                }
+            ],
+            "return": {
+                "description": "x, y",
+                "type": "Object"
+            },
+            "class": "element"
+        },
+        {
+            "file": "src/uncompressed/event.js",
+            "line": 12,
+            "description": "Adds a event from type with handler function to the element.",
+            "itemtype": "method",
+            "name": "add",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "",
+                    "type": "Element"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "event"
+        },
+        {
+            "file": "src/uncompressed/event.js",
+            "line": 31,
+            "description": "Remove event and handler function from element.",
+            "itemtype": "method",
+            "name": "remove",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "",
+                    "type": "Element"
+                },
+                {
+                    "name": "type",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "fn",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "event"
+        },
+        {
+            "file": "src/uncompressed/form.js",
+            "line": 12,
+            "description": "Validate the element with placeholder, pattern or is the value empty.",
+            "itemtype": "method",
+            "name": "validate",
+            "params": [
+                {
+                    "name": "ele",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "form"
+        },
+        {
+            "file": "src/uncompressed/object.js",
+            "line": 12,
+            "description": "Set property of a object.",
+            "itemtype": "method",
+            "name": "setProperty",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "key",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "",
+                    "type": "Mixed"
+                }
+            ],
+            "class": "object"
+        },
+        {
+            "file": "src/uncompressed/object.js",
+            "line": 23,
+            "description": "Extend the child from the parent.",
+            "itemtype": "method",
+            "name": "extend",
+            "params": [
+                {
+                    "name": "C",
+                    "description": "",
+                    "type": "Object"
+                },
+                {
+                    "name": "P",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "object"
+        },
+        {
+            "file": "src/uncompressed/object.js",
+            "line": 34,
+            "description": "Returns a cloned object.",
+            "itemtype": "method",
+            "name": "clone",
+            "params": [
+                {
+                    "name": "obj",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "return": {
+                "description": "the cloned object",
+                "type": "Object"
+            },
+            "class": "object"
+        },
+        {
+            "file": "src/uncompressed/script.js",
+            "line": 1,
+            "description": "V.0.0.1",
+            "class": "socketio"
+        },
+        {
+            "file": "src/uncompressed/socketio.js",
+            "line": 13,
+            "description": "Connect to socket server.",
+            "itemtype": "method",
+            "name": "connect",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "handlings",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "socketio"
+        },
+        {
+            "file": "src/uncompressed/socketio.js",
+            "line": 26,
+            "description": "Send message to connected socket server.",
+            "itemtype": "method",
+            "name": "send",
+            "params": [
+                {
+                    "name": "name",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "data",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "socketio"
+        },
+        {
+            "file": "src/uncompressed/sockjs.js",
+            "line": 13,
+            "description": "Connect to socket server.",
+            "itemtype": "method",
+            "name": "connect",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "sockjs"
+        },
+        {
+            "file": "src/uncompressed/sockjs.js",
+            "line": 26,
+            "description": "Send message to connected socket server.",
+            "itemtype": "method",
+            "name": "send",
+            "params": [
+                {
+                    "name": "data",
+                    "description": "",
+                    "type": "Object"
+                }
+            ],
+            "class": "sockjs"
+        }
+    ],
+    "warnings": [
+        {
+            "message": "Missing item type\nV.0.0.1",
+            "line": " src/uncompressed/script.js:1"
+        }
+    ]
+}
