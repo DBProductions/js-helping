@@ -7,7 +7,9 @@ YUI.add("yuidoc-meta", function(Y) {
         "form",
         "object",
         "socketio",
-        "sockjs"
+        "sockjs",
+        "sse",
+        "xhr"
     ],
     "modules": [],
     "allModules": []

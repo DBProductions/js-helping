@@ -3,7 +3,8 @@
 native js script collection to create NodeJS prototypes.
 
 js-helping works with JSHELPING as namespace, it's basically very simple.  
-Comes with some modules `array, object, element, event, form, socketio, sockjs`
+Comes with some modules  
+`array, object, element, event, form, socketio, sockjs, sse`
 
 ## Load it.
 
@@ -16,9 +17,9 @@ Comes with some modules `array, object, element, event, form, socketio, sockjs`
 
 # Build it
 
-Using grunt to run JSHint and UglifyJS.  
+Using grunt to run JSHint, UglifyJS and YUIDoc.  
 `grunt`
 
 # Documentation
 
-YUIDocs `/docs`
+`/docs`

@@ -21,6 +21,7 @@ module.exports = function(grunt) {
                     jQuery: true,
                     io: true,
                     SockJS: true,
+                    EventSource: true,
                     JSHELPING: true
                 }          
             }
@@ -56,6 +57,11 @@ module.exports = function(grunt) {
                     'src/object.min.js': ['src/uncompressed/object.js']
                 }
             },
+            xhr: {
+                files: {
+                    'src/xhr.min.js': ['src/uncompressed/xhr.js']
+                }
+            },
             socketio: {
                 files: {
                     'src/socketio.min.js': ['src/uncompressed/socketio.js']
@@ -65,11 +71,24 @@ module.exports = function(grunt) {
                 files: {
                     'src/sockjs.min.js': ['src/uncompressed/sockjs.js']
                 }
+            },
+            sse: {
+                files: {
+                    'src/sse.min.js': ['src/uncompressed/sse.js']
+                }
             }
         },
         concat: {
             dist: {
-                src: ['src/array.min.js','src/element.min.js','src/event.min.js','src/form.min.js','src/object.min.js','src/socketio.min.js','src/sockjs.min.js'],
+                src: ['src/array.min.js',
+                      'src/element.min.js',
+                      'src/event.min.js',
+                      'src/form.min.js',                      
+                      'src/object.min.js',
+                      'src/xhr.min.js',
+                      'src/socketio.min.js',
+                      'src/sockjs.min.js',
+                      'src/sse.min.js'],
                 dest: 'js-helping.js'
             }
         },

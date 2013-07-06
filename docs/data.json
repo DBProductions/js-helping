@@ -74,6 +74,24 @@
             },
             "fors": {},
             "namespaces": {}
+        },
+        "src/uncompressed/sse.js": {
+            "name": "src/uncompressed/sse.js",
+            "modules": {},
+            "classes": {
+                "sse": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src/uncompressed/xhr.js": {
+            "name": "src/uncompressed/xhr.js",
+            "modules": {},
+            "classes": {
+                "xhr": 1
+            },
+            "fors": {},
+            "namespaces": {}
         }
     },
     "modules": {},
@@ -161,6 +179,30 @@
             "file": "src/uncompressed/sockjs.js",
             "line": 4,
             "description": "This is the description for the sockjs class."
+        },
+        "sse": {
+            "name": "sse",
+            "shortname": "sse",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/uncompressed/sse.js",
+            "line": 4,
+            "description": "This is the description for the sse class."
+        },
+        "xhr": {
+            "name": "xhr",
+            "shortname": "xhr",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src/uncompressed/xhr.js",
+            "line": 4,
+            "description": "This is the description for the xhr class."
         }
     },
     "classitems": [
@@ -597,6 +639,56 @@
                 }
             ],
             "class": "sockjs"
+        },
+        {
+            "file": "src/uncompressed/sse.js",
+            "line": 13,
+            "description": "Connect to event server.",
+            "itemtype": "method",
+            "name": "connect",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                }
+            ],
+            "class": "sse"
+        },
+        {
+            "file": "src/uncompressed/xhr.js",
+            "line": 12,
+            "description": "request to server.",
+            "itemtype": "method",
+            "name": "request",
+            "params": [
+                {
+                    "name": "url",
+                    "description": "",
+                    "type": "String"
+                },
+                {
+                    "name": "method",
+                    "description": "GET | POST",
+                    "type": "String"
+                },
+                {
+                    "name": "callback",
+                    "description": "",
+                    "type": "Function"
+                },
+                {
+                    "name": "data",
+                    "description": "",
+                    "type": "String"
+                }
+            ],
+            "class": "xhr"
         }
     ],
     "warnings": [
