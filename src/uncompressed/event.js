@@ -18,7 +18,7 @@ JSHELPING._event = function _event() {
          * @param {Function} fn
          */
         add: function add(obj, type, fn) {
-            if  (obj.addEventListener) {
+            if (obj.addEventListener) {
                 obj.addEventListener(type, fn, false);
             } else if (obj.attachEvent) {
                 obj["e" + type + fn] = fn;

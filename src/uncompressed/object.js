@@ -10,22 +10,27 @@ JSHELPING._object = function _object() {
     'use strict';
     return {
         /**
-         * Set property of a object.
+         * Set a property of a object.
          *
          * @method setProperty
          * @param {Object} obj
          * @param {String} key
          * @param {Mixed} value
+         * @param {Object} opts writable, enumerable, configurable
          */
-        setProperty: function setProperty(obj, key, value) {
-            Object.defineProperty(obj, key, {value: value, writable: true, enumerable: true, configurable: true});
+        setProperty: function setProperty(obj, key, value, opts) {
+            opts = opts || {};
+            opts.writable = opts.writable || true;
+            opts.enumerable = opts.enumerable || true;
+            opts.configurable = opts.configurable || true;
+            Object.defineProperty(obj, key, {value: value, writable: opts.writable, enumerable: opts.enumerable, configurable: opts.configurable});
         },
         /**
-         * Extend the child from the parent.
+         * Extend the child object from the parent object.
          *
          * @method extend
-         * @param {Object} C
-         * @param {Object} P
+         * @param {Object} C child object
+         * @param {Object} P parent object
          */
         extend: function extend(C, P) {
             C.prototype = P.prototype;

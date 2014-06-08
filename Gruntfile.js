@@ -3,7 +3,9 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         jshint: {
-            allFiles: ['grunt.js', 'src/uncompressed/**/*.js'],
+            allFiles: ['grunt.js', 
+                       'src/uncompressed/**/*.js',
+                       'spec/**/*.js'],
             options: {
                 curly: true,
                 eqeqeq: true,
@@ -22,7 +24,14 @@ module.exports = function(grunt) {
                     io: true,
                     SockJS: true,
                     EventSource: true,
-                    JSHELPING: true
+                    JSHELPING: true,
+                    test: true,
+                    expect: true,
+                    equal: true,
+                    describe: true,
+                    it: true,
+                    beforeEach: true,
+                    afterEach: true
                 }          
             }
         },
@@ -92,6 +101,33 @@ module.exports = function(grunt) {
                 dest: 'js-helping.js'
             }
         },
+        jasmine: {
+            pivotal: {
+                src: ['src/uncompressed/array.js',
+                      'src/uncompressed/element.js',
+                      'src/uncompressed/event.js',
+                      'src/uncompressed/form.js',
+                      'src/uncompressed/object.js'],
+                options: {
+                    specs: 'spec/**/*.js',
+                    template: require('grunt-template-jasmine-istanbul'),
+                    templateOptions: {
+                        coverage: 'coverage/coverage.json',
+                        report: [
+                            {
+                                type: 'html',
+                                options: {
+                                    dir: 'coverage/html'
+                                }
+                            },
+                            {
+                                type: 'text-summary'
+                            }
+                        ]
+                    }
+                }
+            }
+        },
         yuidoc: {
             compile: {
                 name: '<%= pkg.name %>',
@@ -105,12 +141,12 @@ module.exports = function(grunt) {
         }
     });
     
-    // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-yuidoc');
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'uglify', 'concat', 'yuidoc']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'concat', 'jasmine', 'yuidoc']);
 };

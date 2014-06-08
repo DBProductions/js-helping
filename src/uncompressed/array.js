@@ -2,8 +2,7 @@ if(!JSHELPING) {
     var JSHELPING = {};
 }
 /**
- * This is the description for the array class.  
- * It offers some basic methods to help working with arrays.
+ * This module offers some basic methods to help working with arrays.
  *
  * @class array
  */
@@ -25,7 +24,8 @@ JSHELPING._array = function _array() {
          *
          * @method equalArray
          * @param {Array} array1
-         * @return {Array} array2
+         * @param {Array} array2
+         * @return {Boolean}
          */
         equalArray: function equalArray(array1, array2) {
             if (array1.length !== array2.length) {
@@ -42,7 +42,7 @@ JSHELPING._array = function _array() {
          *
          * @method each
          * @param {Array} arr
-         * @return {Function} func 
+         * @param {Function} func 
          */
         each: function each(arr, func) {
             var i;        
@@ -55,7 +55,8 @@ JSHELPING._array = function _array() {
          *
          * @method remove
          * @param {Array} arr
-         * @return {Object} item 
+         * @param {Object} item 
+         * @return {Array}
          */
         remove: function remove(arr, item) {
             var i = 0;

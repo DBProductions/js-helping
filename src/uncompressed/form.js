@@ -45,9 +45,9 @@ JSHELPING._form = function _form() {
                 if ("" === frm[i].value) {
                     resObj[i].error = "empty";
                 }
+                }
             }
-        }
-        return resObj;
+            return resObj;
         }
     };
 };
