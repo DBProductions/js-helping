@@ -1,10 +1,19 @@
 # js-helping
 
-native js script collection to create NodeJS prototypes.
+Small native JavaScript code to create NodeJS prototypes.  
+It works with modules and should help with common tasks.  
 
-js-helping works with JSHELPING as namespace, it's basically very simple.  
-Comes with some modules  
-`array, object, element, event, form, socketio, sockjs, sse`
+js-helping works with JSHELPING as namespace.  
+
+Following modules are defined:    
+* array
+* object
+* element
+* event
+* form
+* socketio
+* sockjs
+* sse
 
 ## Load it.
 
@@ -15,11 +24,14 @@ Comes with some modules
     var jsh = JSHELPING;
     var modArray = jsh._array();
 
-# Build it
+## Build it
 
 Using grunt to run JSHint, UglifyJS and YUIDoc.  
-`grunt`
 
-# Documentation
+    grunt
 
-`/docs`
+## Travis CI
+
+The continuous integration service is monitoring this repository: [Link](https://travis-ci.org/DBProductions/js-helping)
+
+![Build Status](https://travis-ci.org/DBProductions/js-helping.svg?branch=master)

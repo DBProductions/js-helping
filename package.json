@@ -1,7 +1,10 @@
 {
   "name": "js-helping",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "JS script collection",
+  "scripts": {
+    "test": "grunt --verbose"
+  },
   "srcDir": "src/uncompressed/",
   "docsDir": "docs/",
   "devDependencies": {
