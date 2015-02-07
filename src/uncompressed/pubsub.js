@@ -11,18 +11,20 @@ JSHELPING._pubsub = function _pubsub() {
 	var listeners = {};
 	return {
         /**
-         * 
+         * @method subscribe
+         * @param {String} name
          */
-        subscribe: function(name, callback, context) {
+        subscribe: function subscribe(name, callback, context) {
             if (!listeners[name]) {
                 listeners[name] = [];
             }
             listeners[name].push( context ? callback.bind(context) : callback );
         },
         /**
-         *
+         * @method publish
+         * @param {String} name
          */
-        publish: function(name) {
+        publish: function publish(name) {
             var args = Array.prototype.slice.call(arguments, 1);
             if (listeners[name]) {
                 listeners[name].forEach(function(listener) {
@@ -36,17 +38,18 @@ JSHELPING._pubsub = function _pubsub() {
             }
         },
         /**
-         * 
+         * @method remove
+         * @param {String} name 
          */
-        remove: function(name) {
+        remove: function remove(name) {
             if (listeners[name]) {
                 delete listeners[name];
             }  
         },
         /** 
-         *
+         * @method spy
          */
-        spy: function() {
+        spy: function spy() {
             return listeners;
         }
 	};

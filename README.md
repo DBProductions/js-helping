@@ -7,14 +7,15 @@ js-helping works with JSHELPING as namespace.
 
 Following modules are defined:    
 * array
-* object
 * element
 * event
 * form
+* object
 * pubsub
 * socketio
 * sockjs
 * sse
+* xhr
 
 ## Load it.
 
