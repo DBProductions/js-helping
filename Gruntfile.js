@@ -66,6 +66,11 @@ module.exports = function(grunt) {
                     'src/object.min.js': ['src/uncompressed/object.js']
                 }
             },
+            pubsub: {
+                files: {
+                    'src/pubsub.min.js': ['src/uncompressed/pubsub.js']
+                }
+            },
             xhr: {
                 files: {
                     'src/xhr.min.js': ['src/uncompressed/xhr.js']
@@ -94,6 +99,7 @@ module.exports = function(grunt) {
                       'src/event.min.js',
                       'src/form.min.js',                      
                       'src/object.min.js',
+                      'src/pubsub.min.js',
                       'src/xhr.min.js',
                       'src/socketio.min.js',
                       'src/sockjs.min.js',
