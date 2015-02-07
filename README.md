@@ -37,3 +37,6 @@ Using grunt to run JSHint, UglifyJS and YUIDoc.
 The continuous integration service is monitoring this repository: [Link](https://travis-ci.org/DBProductions/js-helping)
 
 ![Build Status](https://travis-ci.org/DBProductions/js-helping.svg?branch=master)
+
+## Feedback
+Star this repo if you found it useful. Use the github issue tracker to give feedback on this repo.
