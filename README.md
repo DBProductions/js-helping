@@ -11,6 +11,7 @@ Following modules are defined:
 * element
 * event
 * form
+* pubsub
 * socketio
 * sockjs
 * sse
