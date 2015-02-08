@@ -10,7 +10,7 @@ JSHELPING._array = function _array() {
     'use strict';
     return {
         /**
-         * check if given parameter is an array
+         * Check if parameter is an array.
          *
          * @method isArray
          * @param {Function} obj
@@ -20,7 +20,7 @@ JSHELPING._array = function _array() {
             return (Object.prototype.toString.call(obj) === '[object Array]');
         },
         /**
-         * check if the two given arrays are equal
+         * Check if the two arrays are equal.
          *
          * @method equalArray
          * @param {Array} array1
@@ -38,7 +38,7 @@ JSHELPING._array = function _array() {
             return areEqual;
         },
         /**
-         * call the given function on every element in the array
+         * Call the function on every element in the array.
          *
          * @method each
          * @param {Array} arr
@@ -51,7 +51,7 @@ JSHELPING._array = function _array() {
             }
         },
         /**
-         * removes the item from the array
+         * Removes the item from the array.
          *
          * @method remove
          * @param {Array} arr

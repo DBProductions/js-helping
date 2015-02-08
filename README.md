@@ -19,7 +19,7 @@ Following modules are defined:
 
 ## Load it.
 
-    <script type="application/javascript;version=1.8" src="js-helping.js"></script>
+    <script type="application/javascript" src="js-helping.js"></script>
 
 ## Use it.
 

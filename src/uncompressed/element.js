@@ -2,7 +2,6 @@ if(!JSHELPING) {
     var JSHELPING = {};
 }
 /**
- * This is the description for the element class.  
  * It offers some basic methods to help working with DOM element.
  *
  * @class element

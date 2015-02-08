@@ -1,0 +1,60 @@
+<html>
+    <head>
+    	<script type="application/javascript" src="js-helping.js"></script>
+    </head>
+    <body>
+        <div id="main"></div>
+    	<script>
+        window.onload = function() {
+            var jsh = JSHELPING;
+            /**
+             * use array
+             */
+            var modArray = jsh._array();
+            var list = [1, 2, 3, 4, 5];
+            if (modArray.isArray(list)) {
+                modArray.remove(list, 4);
+            }
+            console.log(list);
+            /**
+             * use element
+             */
+            var modElement = jsh._element(); 
+            modElement.add('#main', 'child');
+            var ele = modElement.query('#child');
+            modElement.addClass(ele, 'newCls');
+            if (modElement.hasClass(ele, 'newCls')) {
+                modElement.remove('child');
+            }
+            /**
+             * use object
+             */
+            var modObject = jsh._object();
+            var o = {};
+            modObject.setProperty(o, 'a', 'A');
+            modObject.setProperty(o, 'b', 'B', {enumerable: true});
+            var p = modObject.clone(o);
+            console.log(o, p);
+            /**
+             * use pubsub
+             */
+            var modPubsub = jsh._pubsub();
+            modPubsub.subscribe('all', function(name, args) {
+                console.log(name, args);
+            });
+
+            modPubsub.subscribe('start', function(args) {
+                console.log(args);
+            });
+
+            modPubsub.publish('start', {a:'a',b:'b'});
+            modPubsub.publish('next', {a:'a',b:'b'});
+            modPubsub.publish('last', {a:'a',b:'b'});
+
+            modPubsub.remove('start');
+
+            console.log(modPubsub.spy());
+        };
+    	</script>
+    </body>
+</html>

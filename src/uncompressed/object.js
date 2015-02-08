@@ -20,9 +20,9 @@ JSHELPING._object = function _object() {
          */
         setProperty: function setProperty(obj, key, value, opts) {
             opts = opts || {};
-            opts.writable = opts.writable || true;
-            opts.enumerable = opts.enumerable || true;
-            opts.configurable = opts.configurable || true;
+            opts.writable = opts.writable || false;
+            opts.enumerable = opts.enumerable || false;
+            opts.configurable = opts.configurable || false;
             Object.defineProperty(obj, key, {value: value, writable: opts.writable, enumerable: opts.enumerable, configurable: opts.configurable});
         },
         /**
