@@ -2,39 +2,26 @@ module.exports = function(grunt) {
     'use strict';
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        /**
+         * check code quality
+         */
         jshint: {
             allFiles: ['grunt.js', 
                        'src/uncompressed/**/*.js',
                        'spec/**/*.js'],
             options: {
-                curly: true,
-                eqeqeq: true,
-                eqnull: true,
-                browser: true,
-                node: true,
-                immed: false,
-                latedef: true,
-                newcap: true,
-                noarg: true,
-                sub: true,
-                undef: true,
-                boss: true,
-                globals: {
-                    jQuery: true,
-                    io: true,
-                    SockJS: true,
-                    EventSource: true,
-                    JSHELPING: true,
-                    test: true,
-                    expect: true,
-                    equal: true,
-                    describe: true,
-                    it: true,
-                    beforeEach: true,
-                    afterEach: true
-                }          
+                jshintrc: '.jshintrc'
             }
         },
+        /**
+         * run code style linter
+         */
+        jscs: {
+            src: "<%= pkg.srcDir %>**/*.js"
+        },
+        /**
+         * minifying files
+         */
         uglify: {
             options: {
                 mangle: {toplevel: false}, //prevent changes to variable and function names
@@ -92,6 +79,9 @@ module.exports = function(grunt) {
                 }
             }
         },
+        /**
+         * concat files
+         */
         concat: {
             dist: {
                 src: ['src/array.min.js',
@@ -107,6 +97,9 @@ module.exports = function(grunt) {
                 dest: 'js-helping.js'
             }
         },
+        /**
+         * run jasmine tests
+         */
         jasmine: {
             pivotal: {
                 src: ['src/uncompressed/array.js',
@@ -134,6 +127,9 @@ module.exports = function(grunt) {
                 }
             }
         },
+        /**
+         * create api documentation
+         */
         yuidoc: {
             compile: {
                 name: '<%= pkg.name %>',
@@ -148,11 +144,12 @@ module.exports = function(grunt) {
     });
     
     grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-jscs-checker');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-yuidoc');
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'uglify', 'concat', 'jasmine', 'yuidoc']);
+    grunt.registerTask('default', ['jshint', 'jscs', 'uglify', 'concat', 'jasmine', 'yuidoc']);
 };

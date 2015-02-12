@@ -1,6 +1,4 @@
-if(!JSHELPING) {
-    var JSHELPING = {};
-}
+var JSHELPING = JSHELPING || {};
 /**
  * This module offers some basic methods to help working with arrays.
  *
@@ -32,7 +30,7 @@ JSHELPING._array = function _array() {
                 return false;
             }
             var areEqual = true, i;
-            for (i = 0; (i < array2.length) && areEqual; i++) {
+            for (i = 0; (i < array2.length) && areEqual; i += 1) {
                 areEqual = (array1[i] === array2[i]);
             }
             return areEqual;
@@ -46,7 +44,7 @@ JSHELPING._array = function _array() {
          */
         each: function each(arr, func) {
             var i;        
-            for (i = arr.length-1; i >= 0; i--) {
+            for (i = arr.length - 1; i >= 0; i -= 1) {
                 arr[i] = func(arr[i]);
             }
         },

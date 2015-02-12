@@ -1,3 +1,4 @@
+var JSHELPING = JSHELPING || {};
 /** */
 describe("JSHELPING array module", function() {
     var modArray = JSHELPING._array();

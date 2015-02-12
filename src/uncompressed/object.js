@@ -1,6 +1,4 @@
-if(!JSHELPING) {
-    var JSHELPING = {};
-}
+var JSHELPING = JSHELPING || {};
 /**
  * This is the description for the object class.
  *
@@ -23,7 +21,7 @@ JSHELPING._object = function _object() {
             opts.writable = opts.writable || false;
             opts.enumerable = opts.enumerable || false;
             opts.configurable = opts.configurable || false;
-            Object.defineProperty(obj, key, {value: value, writable: opts.writable, enumerable: opts.enumerable, configurable: opts.configurable});
+            Object.defineProperty(obj, key, { value: value, writable: opts.writable, enumerable: opts.enumerable, configurable: opts.configurable });
         },
         /**
          * Extend the child object from the parent object.

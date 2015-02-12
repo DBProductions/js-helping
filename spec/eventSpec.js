@@ -1,3 +1,4 @@
+var JSHELPING = JSHELPING || {};
 /** */
 describe("JSHELPING event module", function() {
 	var modEvent = JSHELPING._event();

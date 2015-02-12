@@ -1,3 +1,1 @@
-if(!JSHELPING) {
-    var JSHELPING = {};
-}
+var JSHELPING = JSHELPING || {};

@@ -1,3 +1,4 @@
+var JSHELPING = JSHELPING || {};
 /** */
 describe("JSHELPING form module", function() {
 	var modForm = JSHELPING._form();

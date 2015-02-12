@@ -1,6 +1,4 @@
-if(!JSHELPING) {
-    var JSHELPING = {};
-}
+var JSHELPING = JSHELPING || {};
 /**
  * This is the description for the pubsub class.
  *
@@ -33,7 +31,7 @@ JSHELPING._pubsub = function _pubsub() {
             }
             if (listeners['all']) {
                 listeners['all'].forEach(function(listener) {
-                    listener.apply(null, [name].concat(args));
+                    listener.apply(null, [ name ].concat(args));
                 });                
             }
         },
@@ -42,8 +40,8 @@ JSHELPING._pubsub = function _pubsub() {
          * @param {String} name 
          */
         remove: function remove(name) {
-            if (listeners[name]) {
-                delete listeners[name];
+            if (listeners[ name ]) {
+                delete listeners[ name ];
             }  
         },
         /** 

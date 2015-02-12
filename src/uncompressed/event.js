@@ -1,6 +1,4 @@
-if(!JSHELPING) {
-    var JSHELPING = {};
-}
+var JSHELPING = JSHELPING || {};
 /**
  * This is the description for the event class.
  *
@@ -25,7 +23,7 @@ JSHELPING._event = function _event() {
                 obj[type + fn] = function() { 
                     obj["e" + type + fn](window.event);
                 };
-                obj.attachEvent( "on"+type, obj[type+fn] );
+                obj.attachEvent("on" + type, obj[type + fn]);
             }
         },
         /**
@@ -41,7 +39,7 @@ JSHELPING._event = function _event() {
                 obj.removeEventListener(type, fn, false);
                 obj[type] = undefined;
             } else if (obj.detachEvent) {
-                obj.detachEvent("on" + type, obj[type+fn]);
+                obj.detachEvent("on" + type, obj[type + fn]);
                 obj[type + fn] = null;
                 obj["e" + type + fn] = null;
             }

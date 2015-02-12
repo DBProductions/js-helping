@@ -1,3 +1,4 @@
+var JSHELPING = JSHELPING || {};
 /** */
 describe("JSHELPING element module", function() {
 	var modElement = JSHELPING._element();

@@ -1,6 +1,4 @@
-if(!JSHELPING) {
-    var JSHELPING = {};
-}
+var JSHELPING = JSHELPING || {};
 /**
  * It offers some basic methods to help working with DOM element.
  *
@@ -28,8 +26,8 @@ JSHELPING._element = function _element() {
          * @param {String} id
          */
         remove: function remove(id) {
-            var ele = document.getElementById(id);
-            var parent = ele.parentNode;
+            var ele = document.getElementById(id),
+                parent = ele.parentNode;
             parent.removeChild(ele);
         },
         /**
@@ -71,8 +69,8 @@ JSHELPING._element = function _element() {
          * @return {Boolean}
          */
         hasClass: function hasClass(ele, selector) {
-            var className = " " + selector + " ";
-            var elemClassName = ele.getAttribute("class");
+            var className = " " + selector + " ",
+                elemClassName = ele.getAttribute("class");
             if ((" " + elemClassName + " ").replace(/[\n\t]/g, " ").indexOf(className) > -1) {
                 return true;
             }  
@@ -87,7 +85,7 @@ JSHELPING._element = function _element() {
          */
         removeClass: function removeClass(ele, cls) {
             if (this.hasClass(ele,cls)) {
-                ele.className = ele.className.replace(new RegExp('(\\s|^)'+cls+'(\\s|$)'), ' ');
+                ele.className = ele.className.replace(new RegExp('(\\s|^)' + cls + '(\\s|$)'), ' ');
             }
         },
         /**
@@ -98,15 +96,15 @@ JSHELPING._element = function _element() {
          * @return {Object} x, y
          */
         getPos: function getPos(ele) {
-            var curleft = 0;
-            var curtop = 0;
+            var curleft = 0,
+                curtop = 0;
             if (ele.offsetParent) {
                 do {
                     curleft += ele.offsetLeft;
                     curtop += ele.offsetTop;
                 } while (ele = ele.offsetParent);
             }
-            return {x: curleft, y: curtop};
+            return { x: curleft, y: curtop };
         }
     };
 };

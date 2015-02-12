@@ -1,6 +1,4 @@
-if(!JSHELPING) {
-    var JSHELPING = {};
-}
+var JSHELPING = JSHELPING || {};
 /**
  * This is the description for the form class.
  *
@@ -16,9 +14,9 @@ JSHELPING._form = function _form() {
          * @param {String} ele
          */
         validate: function(ele) {
-            var frm = document.getElementById(ele) || document.getElementsByName(ele)[0];
-            var resObj = {};
-            for(var i = 0; i < frm.length; i++) {
+            var frm = document.getElementById(ele) || document.getElementsByName(ele)[0],
+                resObj = {};
+            for (var i = 0; i < frm.length; i += 1) {
                 if ( frm[i].type && 
                    ("password" !== frm[i].type) && 
                    ("submit" !== frm[i].type) && 
