@@ -5,6 +5,10 @@ describe("JSHELPING element module", function() {
 	beforeEach(function () {
 		var container = document.createElement("div");
         container.setAttribute("id", "testEle");
+        container.setAttribute("style", "left:20px;");
+        var child = document.createElement("div");
+        child.setAttribute("id", "childEle");
+        container.appendChild(child);
         document.getElementsByTagName('body')[0].appendChild(container);
 	});
 	afterEach(function() {
@@ -24,12 +28,14 @@ describe("JSHELPING element module", function() {
         var ele = modElement.query('#testEle');
         modElement.addClass(modElement.query('#testEle'), 'test1');
         modElement.addClass(modElement.query('#testEle'), 'test2');
+        modElement.addClass(modElement.query('#testEle'), 'test2');
         expect(modElement.hasClass(ele, 'test1')).toBe(true);
         expect(modElement.hasClass(ele, 'test2')).toBe(true);
     });
     /** */
     it("remove class and has class testing", function() {
         var ele = modElement.query('#testEle');
+        modElement.removeClass(modElement.query('#testEle'), 'test1');
         modElement.addClass(modElement.query('#testEle'), 'test1');
         modElement.addClass(modElement.query('#testEle'), 'test2');
         modElement.removeClass(modElement.query('#testEle'), 'test1');
@@ -44,7 +50,7 @@ describe("JSHELPING element module", function() {
     });
     /** */
     it("get position of element", function() {
-        var ele = modElement.query('#testEle');
+        var ele = modElement.query('#childEle');
         var pos = modElement.getPos(ele);
         expect(pos).toEqual({x: 5, y: 252});
     });

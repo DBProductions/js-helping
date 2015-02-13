@@ -7,10 +7,12 @@ describe("JSHELPING array module", function() {
     it("isArray", function() {
         var testArr = [1,2,3], 
             testNum = 3, 
-            testStr = 'test';
+            testStr = 'test',
+            testObj = {};
         expect(modArray.isArray(testArr)).toBe(true);
         expect(modArray.isArray(testNum)).toBe(false);
-        expect(modArray.isArray(testStr)).toBe(false); 
+        expect(modArray.isArray(testStr)).toBe(false);
+        expect(modArray.isArray(testObj)).toBe(false); 
     });
     /** */
     it("equalArray", function() {
@@ -20,12 +22,12 @@ describe("JSHELPING array module", function() {
         testArr2.shift();
         expect(modArray.equalArray(testArr1, testArr2)).toBe(false);
         testArr2 = [3,2,1];
-        //expect(modArray.equalArray(testArr1, testArr2)).toBe(true);
+        expect(modArray.equalArray(testArr1, testArr2)).toBe(false);
         testArr2.reverse();
         expect(modArray.equalArray(testArr1, testArr2)).toBe(true);
     });
     /** */
-    it("equalArray", function() {
+    it("each and remove", function() {
         var arr = [1,2,3,4,5];
         modArray.each(arr, countup);
         expect(arr[0]).toBe(2);

@@ -20,6 +20,36 @@ module.exports = function(grunt) {
             src: "<%= pkg.srcDir %>**/*.js"
         },
         /**
+         * run jasmine tests
+         */
+        jasmine: {
+            pivotal: {
+                src: ['src/uncompressed/array.js',
+                      'src/uncompressed/element.js',
+                      'src/uncompressed/event.js',
+                      'src/uncompressed/form.js',
+                      'src/uncompressed/object.js'],
+                options: {
+                    specs: 'spec/**/*.js',
+                    template: require('grunt-template-jasmine-istanbul'),
+                    templateOptions: {
+                        coverage: 'coverage/coverage.json',
+                        report: [
+                            {
+                                type: 'html',
+                                options: {
+                                    dir: 'coverage/html'
+                                }
+                            },
+                            {
+                                type: 'text-summary'
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        /**
          * minifying files
          */
         uglify: {
@@ -98,34 +128,13 @@ module.exports = function(grunt) {
             }
         },
         /**
-         * run jasmine tests
+         * copy file
          */
-        jasmine: {
-            pivotal: {
-                src: ['src/uncompressed/array.js',
-                      'src/uncompressed/element.js',
-                      'src/uncompressed/event.js',
-                      'src/uncompressed/form.js',
-                      'src/uncompressed/object.js'],
-                options: {
-                    specs: 'spec/**/*.js',
-                    template: require('grunt-template-jasmine-istanbul'),
-                    templateOptions: {
-                        coverage: 'coverage/coverage.json',
-                        report: [
-                            {
-                                type: 'html',
-                                options: {
-                                    dir: 'coverage/html'
-                                }
-                            },
-                            {
-                                type: 'text-summary'
-                            }
-                        ]
-                    }
-                }
-            }
+        copy: {
+            main: {
+                src: 'js-helping.js',
+                dest: 'examples/js-helping.js',
+            },
         },
         /**
          * create api documentation
@@ -148,8 +157,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-yuidoc');
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'jscs', 'uglify', 'concat', 'jasmine', 'yuidoc']);
+    grunt.registerTask('default', ['jshint', 'jscs', 'uglify', 'concat', 'jasmine', 'copy', 'yuidoc']);
 };
